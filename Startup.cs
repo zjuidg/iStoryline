@@ -13,6 +13,9 @@ namespace StorylineBackend
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder => {
+                builder.AllowAnyOrigin();
+            }));
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
