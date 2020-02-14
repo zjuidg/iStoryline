@@ -14,14 +14,17 @@ namespace StorylineBackend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors(o => o.AddPolicy("MyPolicy", builder => {
-                builder.AllowAnyOrigin();
+                builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
             }));
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseOwin(x => x.UseNancy());
             app.UseStaticFiles();
+            app.UseCors("MyPolicy");
+            app.UseOwin(x => x.UseNancy());
         }
     }
 }

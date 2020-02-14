@@ -17,11 +17,11 @@ namespace StorylineBackend
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseKestrel()
                 .UseStartup<Startup>()
-                .UseUrls("http://localhost:5050")
+                .UseUrls("http://0.0.0.0:5050")
                 .Build();
 
             var webSocketServer = new WebSocketServer(5051);
-//            webSocketServer.AddWebSocketService<Layout> ("/");
+            // webSocketServer.AddWebSocketService<Layout> ("/");
             webSocketServer.Start();
             fileServer.Run();
 
