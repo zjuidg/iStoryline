@@ -80,7 +80,7 @@ sessionBreaks = [{
 
 ## Data
 
-Put [story scripts](https://github.com/tangtan/istoryline/wiki/Story-Script) under the directory of `./deploy/uploadFiles` (or you can change the path var in the appsetting.json).
+Put [story scripts](https://github.com/tangtan/StoryScripts) under the directory of `./deploy/uploadFiles` (or you can change the path var in the appsetting.json).
 
 ## Reference
 
